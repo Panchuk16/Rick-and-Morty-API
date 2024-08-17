@@ -32,6 +32,36 @@ button {
     height: 40px;
     width: 110px;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+#right:hover {
+    transform: scale(1.1) translateX(5px);
+    border-color: #d20000;
+}
+
+#left:hover {
+    transform: scale(1.1) translateX(-5px);
+    border-color: #d20000;
+}
+
+
+input:hover {
+    transform: scale(1.1);
+    border-color: #d20000;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    border: 3px solid #d20000;
+}
+
+.card-random:hover {
+    transform: scale(1.05);
+    border-color: #d20000;
+    transition: all 0.3s ease;
 }
 
 
@@ -51,7 +81,7 @@ input {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding-left: 50px;
     padding-right: 50px;
@@ -86,17 +116,11 @@ input {
     margin-top: 20px;
 }
 
-#welcome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
 .welcome {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 footer {
@@ -109,7 +133,6 @@ footer {
     align-items: center;
     height: 30px;
     width: 100%;
-    border: 3px solid black;
     font-weight: bold;
 
 }

@@ -9,24 +9,21 @@
 <body>
     <div class="navbar">
         <form action="/random" method="POST">
-            <button type="submit">Random</button>
+            <button id="left" type="submit">Random</button>
         </form>
     
         <form action="/get-random-list" method="POST">
             <input placeholder="Amount" name="amount" type="number" min="1">
-            <button type="submit">Get</button>
+            <button id="right" type="submit">Get</button>
         </form>
     </div>
 
-    <!-- Отображение приветственного сообщения -->
      <div class="welcome">
         <% if (welcome) { %>
         <h1 id="welcome"><%= welcome %></h1>
         <% } %>
      </div>
 
-
-    <!-- Отображение одного персонажа, если не показывается список -->
     <% if (!data && !error && name) { %>
         <section class="card-random">
             <div>
@@ -39,7 +36,6 @@
         </section>
     <% } %>
 
-    <!-- Отображение списка персонажей, если данные о списке есть -->
     <% if (data && data.length > 0) { %>
         <section class="cards-section">
             <div class="grid">
@@ -56,7 +52,6 @@
         </section>
     <% } %>
 
-    <!-- Отображение ошибки, если она есть -->
     <% if (error) { %>
         <div class="error">
             <h2>Error: <%= error %></h2>

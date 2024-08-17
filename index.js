@@ -22,7 +22,7 @@ app.post("/random", async (req, res) => {
         const { name, image, location, status, species } = result.data;
 
         res.render("index.ejs", {
-            welcome: null, // Убираем welcome
+            welcome: null,
             name: name,
             image: image,
             location: location.name,
@@ -34,7 +34,7 @@ app.post("/random", async (req, res) => {
     } catch (error) {
         console.error("Failed to make request:", error.message);
         res.render("index.ejs", {
-            welcome: null, // Убираем welcome
+            welcome: null,
             name: null,
             image: null,
             location: null,
@@ -58,7 +58,7 @@ app.post("/get-random-list", async (req, res) => {
     try {
         const result = await axios.get(baseURL + "character/" + list.join(','));
         res.render("index.ejs", {
-            welcome: null, // Убираем welcome
+            welcome: null,
             list: list,
             data: result.data,
             name: null,
@@ -71,7 +71,7 @@ app.post("/get-random-list", async (req, res) => {
     } catch (error) {
         console.error("Failed to make request:", error.message);
         res.render("index.ejs", {
-            welcome: null, // Убираем welcome
+            welcome: null,
             list: list,
             data: null,
             name: null,
@@ -87,3 +87,4 @@ app.post("/get-random-list", async (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
