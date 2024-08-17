@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty API</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <form action="/random" method="POST">
+            <button type="submit">Random</button>
+        </form>
+    
+        <form action="/get-random-list" method="POST">
+            <input placeholder="Amount" name="amount" type="number" min="1">
+            <button type="submit">Get</button>
+        </form>
+    </div>
+
+    <!-- Отображение приветственного сообщения -->
+     <div class="welcome">
+        <% if (welcome) { %>
+        <h1 id="welcome"><%= welcome %></h1>
+        <% } %>
+     </div>
+
+
+    <!-- Отображение одного персонажа, если не показывается список -->
+    <% if (!data && !error && name) { %>
+        <section class="card-random">
+            <div>
+                <h2><%= name %></h2>
+                <img src="<%= image %>" alt="<%= name %>">
+                <h3>Location: <%= location %></h3>
+                <h3>Species: <%= species %></h3>
+                <h3>Status: <%= status %></h3>
+            </div> 
+        </section>
+    <% } %>
+
+    <!-- Отображение списка персонажей, если данные о списке есть -->
+    <% if (data && data.length > 0) { %>
+        <section class="cards-section">
+            <div class="grid">
+                <% data.forEach(character => { %>
+                    <div class="card">
+                        <h2><%= character.name %></h2>
+                        <img src="<%= character.image %>" alt="<%= character.name %>">
+                        <h3>Location: <%= character.location.name %></h3>
+                        <h3>Species: <%= character.species %></h3>
+                        <h3>Status: <%= character.status %></h3>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+    <% } %>
+
+    <!-- Отображение ошибки, если она есть -->
+    <% if (error) { %>
+        <div class="error">
+            <h2>Error: <%= error %></h2>
+        </div>
+    <% } %>
+
+    <footer>
+        Copyright ©️
+        2024. 
+        Yaroslav Panchuk
+    </footer>
+</body>
+</html>

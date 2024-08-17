@@ -1,0 +1,127 @@
+html{
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #402E7A;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 3px solid #3DC2EC;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    width: 110px;
+    text-align: center;
+}
+
+
+input {
+    background-color: white;
+    color: black;
+    border: 3px solid #3DC2EC;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    width: 110px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #4B70F5;
+    border: 1px solid #3DC2EC;
+    border-radius: 8px;
+}
+
+.card-random {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #4B70F5;
+    border: 1px solid #3DC2EC;
+    border-radius: 8px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #3DC2EC;
+    color: black;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    border: 3px solid black;
+    font-weight: bold;
+
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1200px){
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
